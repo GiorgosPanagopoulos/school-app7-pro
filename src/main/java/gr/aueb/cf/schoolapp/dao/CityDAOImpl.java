@@ -23,7 +23,7 @@ public class CityDAOImpl implements ICityDAO {
              PreparedStatement ps = connection.prepareStatement(sql)) {
 
             rs = ps.executeQuery();
-            while (rs.next()) {
+             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
                 City city = new City(id, name);
