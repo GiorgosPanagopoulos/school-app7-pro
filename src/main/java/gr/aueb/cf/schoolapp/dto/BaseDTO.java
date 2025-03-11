@@ -1,9 +1,7 @@
-package gr.aueb.cf.schoolapp.model;
+package gr.aueb.cf.schoolapp.dto;
 
-import java.time.LocalDateTime;
+public abstract class BaseDTO {
 
-public class Teacher {
-    private Integer id;
     private String firstname;
     private String lastname;
     private String vat;
@@ -14,19 +12,14 @@ public class Teacher {
     private String streetNum;
     private String zipCode;
     private Integer cityId;
-    private String uuid;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    // private Boolean enabled; // soft delete
 
-    public Teacher() {
+    public BaseDTO() {
 
     }
 
-    public Teacher(Integer id, String firstname, String lastname, String vat, String fatherName,
-                   String phoneNum, String email, String street, String streetNum, String zipCode,
-                   Integer cityId, String uuid, LocalDateTime createdAt, LocalDateTime updatedAt) {
-        this.id = id;
+    public BaseDTO(String firstname, String lastname, String vat, String fatherName,
+                   String phoneNum, String email, String street, String streetNum,
+                   String zipCode, Integer cityId) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.vat = vat;
@@ -37,17 +30,6 @@ public class Teacher {
         this.streetNum = streetNum;
         this.zipCode = zipCode;
         this.cityId = cityId;
-        this.uuid = uuid;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getFirstname() {
@@ -128,29 +110,5 @@ public class Teacher {
 
     public void setCityId(Integer cityId) {
         this.cityId = cityId;
-    }
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }
